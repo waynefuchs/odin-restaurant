@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;1,400&display=swap'); */
+
+:root {
+    /* Full palette: https://flatuicolors.com/palette/us */
+    --p-gray1: #2d3436;
+    --p-gray2: #636e72;
+    --p-gray3: #b2bec3;
+    --p-gray4: #dfe6e9;
+    --p-pink1: #e84393;
+    --p-pink2: #fd79a8;
+    --p-red1: #d63031;
+    --p-red2: #ff7675;
+    --p-orange1: #e17055;
+    --p-orange2: #fab1a0;
+    --p-yellow1: #fdcb6e;
+    --p-yellow2: #ffeaa7;
+    --p-purple1: #6c5ce7;
+    --p-purple2: #a29bfe;
+    --p-blue1: #0984e3;
+    --p-blue2: #74b9ff;
+    --p-cyan1: #00cec9;
+    --p-cyan2: #81ecec;
+    --p-green1: #00b894;
+    --p-green2: #55efc4;
+
+    /* The colors from the above palette that I'm using */
+    --c-accent1: var(--p-blue1);
+    --c-accent2: var(--p-green1);
+    --c-accent3: var(--p-orange1);
+    --c-dark: var(--p-gray1);
+    --c-medium: var(--p-gray3);
+    --c-light: var(--p-gray4);
+    --c-shadow: black;
+
+    /* I've found that defining standard measurements is handy */
+    --gap: 15px;
+    --corner: 5px;
+
+    color: var(--c-light);
+    font-family: Eczar;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.photo-credit {
+    display: none;
+}
+
+.content {
+    width: 100%;
+    height: 100vh;
+    border: 0;
+    background: url('./dimitar-krastev-W-fMOyWW4eA-unsplash-small.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    vertical-align: center;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+}
+
+a {
+    text-decoration: none;
+    color: var(--c-dark);
+}
+
+.hero {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: var(--c-dark);
+    text-align: center;
+    width: 50%;
+    border-radius: 15px;
+    padding: 25px;
+    margin: auto;
+    box-shadow: 1px 2px 3px var(--c-shadow);
+}
