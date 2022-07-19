@@ -1,5 +1,5 @@
 import './style.css';
-import imageBurger from './dimitar-krastev-W-fMOyWW4eA-unsplash-small.jpg';
+import logo from './hideaway-pizza-logo.png';
 
 console.log("It works.");
 console.log("Moo")
