@@ -11,7 +11,7 @@
     --p-gray4: #dfe6e9;
     --p-pink1: #e84393;
     --p-pink2: #fd79a8;
-    --p-red1: #d63031;
+    --p-red1: #a12c2c;
     --p-red2: #ff7675;
     --p-orange1: #e17055;
     --p-orange2: #fab1a0;
@@ -27,7 +27,7 @@
     --p-green2: #55efc4;
 
     /* The colors from the above palette that I'm using */
-    --c-accent1: var(--p-blue1);
+    --c-accent1: var(--p-red1);
     --c-accent2: var(--p-green1);
     --c-accent3: var(--p-orange1);
     --c-dark: var(--p-gray1);
@@ -42,6 +42,7 @@
 
     color: var(--c-white);
     font-family: Raleway;
+    font-size: max(24px);
 }
 
 * {
@@ -61,28 +62,51 @@ body {
 }
 
 header {
-    height: 10vh;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
 }
 header>img {
-    height: 100%;
+    align-self: center;
+}
+
+nav {
+    padding-top: var(--gap);
+    display: flex;
+    justify-content: center;
+    gap: calc(var(--gap) * 3);
+}
+nav>a {
+    color: var(--c-white);
+    font-weight: 700;
+}
+nav>a.selected{
+    color: var(--c-accent1);
 }
 
 .hero {
     background-color: var(--c-shadow);
     text-align: center;
-    height: 80vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    height: 60vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .hero > h1 {
-    font-size: 8vh;
+    font-size: 8vmin;
 }
 .hero > h2 {
-    font-size: 2.5vh;
+    font-size: max(2.5vmin, 2rem);
 }
 
 .socials {
-    height: 10vh;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .socials,
 .socials>a {
@@ -90,12 +114,25 @@ header>img {
     font-weight: 700;
     background-color: var(--c-dark);
 }
-.socials>a {
-    grid-column: span;
-}
 
 a {
     text-decoration: none;
     color: var(--c-dark);
 }
 
+.about {
+    padding: min(2vh, var(--gap)) 10vw;
+    background-color: var(--c-white);
+    color: var(--c-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+.about>h2 {
+    font-size: 4vmin;
+    color: var(--c-accent1);
+}
+.about>p {
+    padding-top: var(--gap);
+}

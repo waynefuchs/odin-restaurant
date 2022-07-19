@@ -1,5 +1,6 @@
-import './style.css';
-import logo from './hideaway-pizza-logo.png';
+import loadHome from './home';
 
-console.log("It works.");
-console.log("Moo")
+loadHome();
+
+console.log("index.js loaded.")
+
