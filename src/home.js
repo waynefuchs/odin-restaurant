@@ -1,43 +1,11 @@
+import loadHeader from './header';
 import './style.css';
-import ImageLogo from './hideaway-pizza-logo.png';
+
 import ImageFacebook from './facebook.png';
 import ImageYoutube from './youtube.png';
 
 const phoneNumber = "(850) 682-3225";
 
-
-function createNav(location) {
-    const nav = document.createElement('nav');
-
-    const linkHome = document.createElement('a');
-    linkHome.src = "./";
-    linkHome.textContent = "Home";
-    if(location === "home") linkHome.classList.add('selected');
-
-    const linkMenu = document.createElement('a');
-    linkMenu.src = "./menu";
-    linkMenu.textContent = "Menu";
-    if(location === "menu") linkMenu.classList.add('selected');
-
-    const linkContact = document.createElement('a');
-    linkContact .src = "./contact";
-    linkContact.textContent = "Contact";
-    if(location === "contact") linkContact.classList.add('selected');
-
-    nav.append(linkHome);
-    nav.append(linkMenu);
-    nav.append(linkContact);
-    return nav;
-}
-
-function createHeader() {
-    const header = document.createElement('header');
-    const imgLogo = new Image();
-    imgLogo.src = ImageLogo;
-    header.append(imgLogo);
-    header.append(createNav('home'));
-    return header;
-}
 
 function createHero() {
     const hero = document.createElement('div');
@@ -97,13 +65,16 @@ function createBlurb(textHeading, textParagraph) {
 
 function initializePage() {
     const content = document.querySelector('#content');
+    content.innerHTML = "";
+
     if(content === null) {
         console.error("Content is null.");
         console.dir(document);
         return;
     }
 
-    content.append(createHeader());
+    // content.append(createHeader());
+    content.append(loadHeader());
     content.append(createHero());
     content.append(createSocials());
 
