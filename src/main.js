@@ -1,6 +1,6 @@
 function createMain() {
-    const footer = document.createElement('main');
-    return footer;
+    const main = document.createElement('main');
+    return main;
 }
 
 export default createMain;

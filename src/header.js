@@ -1,28 +1,42 @@
 import loadHome from './home';
 import loadMenu from './menu';
+import loadContact from './contact';
 
 import ImageLogo from './hideaway-pizza-logo.png';
 
-function createNav(location) {
+function createNav() {
     const nav = document.createElement('nav');
 
     const linkHome = document.createElement('a');
-    // linkHome.href = "./";
+    linkHome.classList.add('menu-link');
     linkHome.textContent = "Home";
-    linkHome.addEventListener("click", (e) => {
+    linkHome.addEventListener("click", (e) => { 
+        const menuItems = document.querySelectorAll('.menu-link');
+        menuItems.forEach((item) => item.classList.remove('selected'));
+        e.target.classList.add('selected');
         loadHome();
     });
-    if(location === "home") linkHome.classList.add('selected');
+    linkHome.classList.add('selected');
 
     const linkMenu = document.createElement('a');
-    // linkMenu.href = "./menu";
+    linkMenu.classList.add('menu-link');
     linkMenu.textContent = "Menu";
-    if(location === "menu") linkMenu.classList.add('selected');
+    linkMenu.addEventListener("click", (e) => { 
+        const menuItems = document.querySelectorAll('.menu-link');
+        menuItems.forEach((item) => item.classList.remove('selected'));
+        e.target.classList.add('selected');
+        loadMenu(); 
+    });
 
     const linkContact = document.createElement('a');
-    // linkContact.href = "./contact";
+    linkContact.classList.add('menu-link');
     linkContact.textContent = "Contact";
-    if(location === "contact") linkContact.classList.add('selected');
+    linkContact.addEventListener("click", (e) => { 
+        const menuItems = document.querySelectorAll('.menu-link');
+        menuItems.forEach((item) => item.classList.remove('selected'));
+        e.target.classList.add('selected');
+        loadContact(); 
+    });
 
     nav.append(linkHome);
     nav.append(linkMenu);
@@ -35,7 +49,7 @@ function createHeader() {
     const imgLogo = new Image();
     imgLogo.src = ImageLogo;
     header.append(imgLogo);
-    header.append(createNav('home'));
+    header.append(createNav());
     return header;
 }
 
