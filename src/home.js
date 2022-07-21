@@ -1,4 +1,3 @@
-import loadHeader from './header';
 import './style.css';
 
 import ImageFacebook from './facebook.png';
@@ -64,22 +63,21 @@ function createBlurb(textHeading, textParagraph) {
 
 
 function initializePage() {
-    const content = document.querySelector('#content');
-    content.innerHTML = "";
+    // Get and clear main const
+    const main = document.querySelector('main');
+    while (main.firstChild) main.removeChild(main.firstChild);
 
-    if(content === null) {
-        console.error("Content is null.");
+    if(main === null) {
+        console.error("'main' element is null.");
         console.dir(document);
         return;
     }
 
-    // content.append(createHeader());
-    content.append(loadHeader());
-    content.append(createHero());
-    content.append(createSocials());
+    main.append(createHero());
+    main.append(createSocials());
 
-    content.append(createBlurb("Homemade Pizza", "We're a company founded on the philosophy that everything tastes better when made from scratch. At Hideaway Pizza in Crestview, FL, we’re the area's most popular choice for enjoying gourmet, homemade pizza in a relaxing atmosphere. We take pride in delivering delicious food made with fresh, quality ingredients, and every item on our menu is made fresh every day. Our diverse menu, including sandwiches, pasta, and Stromboli, has something or everyone to enjoy—all made with the homemade touch you know and love."));
-    content.append(createBlurb("Personable and Friendly Service", "It's our mission to provide personable and friendly service during every customer interaction, and we’ve cultivated a reputation as a business that believes in going the extra mile in everything we do. Whether you stop by for a quick lunch during the work week or a sit-down meal with the family, your experience will be nothing but pleasant from the moment you walk in the door. When on the hunt for the perfect meal for any occasion, Hideaway Pizza in Okaloosa County is the answer. For questions regarding our menu or to place a take-out order, call our restaurant today to speak with a friendly team member. You can also reach out to us through our website, we’re more than happy to answer your questions."));
+    main.append(createBlurb("Homemade Pizza", "We're a company founded on the philosophy that everything tastes better when made from scratch. At Hideaway Pizza in Crestview, FL, we’re the area's most popular choice for enjoying gourmet, homemade pizza in a relaxing atmosphere. We take pride in delivering delicious food made with fresh, quality ingredients, and every item on our menu is made fresh every day. Our diverse menu, including sandwiches, pasta, and Stromboli, has something or everyone to enjoy—all made with the homemade touch you know and love."));
+    main.append(createBlurb("Personable and Friendly Service", "It's our mission to provide personable and friendly service during every customer interaction, and we’ve cultivated a reputation as a business that believes in going the extra mile in everything we do. Whether you stop by for a quick lunch during the work week or a sit-down meal with the family, your experience will be nothing but pleasant from the moment you walk in the door. When on the hunt for the perfect meal for any occasion, Hideaway Pizza in Okaloosa County is the answer. For questions regarding our menu or to place a take-out order, call our restaurant today to speak with a friendly team member. You can also reach out to us through our website, we’re more than happy to answer your questions."));
 }
 
 export default initializePage;

@@ -1,20 +1,26 @@
+import loadHome from './home';
+import loadMenu from './menu';
+
 import ImageLogo from './hideaway-pizza-logo.png';
 
 function createNav(location) {
     const nav = document.createElement('nav');
 
     const linkHome = document.createElement('a');
-    linkHome.href = "./";
+    // linkHome.href = "./";
     linkHome.textContent = "Home";
+    linkHome.addEventListener("click", (e) => {
+        loadHome();
+    });
     if(location === "home") linkHome.classList.add('selected');
 
     const linkMenu = document.createElement('a');
-    linkMenu.href = "./menu";
+    // linkMenu.href = "./menu";
     linkMenu.textContent = "Menu";
     if(location === "menu") linkMenu.classList.add('selected');
 
     const linkContact = document.createElement('a');
-    linkContact.href = "./contact";
+    // linkContact.href = "./contact";
     linkContact.textContent = "Contact";
     if(location === "contact") linkContact.classList.add('selected');
 
